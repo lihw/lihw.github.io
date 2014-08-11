@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='S:/gpgpu/clframework/examples/multicqueue/bin'
+let g:netrw_dirhist_2='S:/FutureInterface2/Licenses'
+let g:netrw_dirhist_3='S:/SV/clframework/projects/clrouting/src'
+let g:netrw_dirhist_4='S:/FutureInterface2/Paper3D/src'
+let g:netrw_dirhist_5='S:/FutureInterface2/Paper3D/src/resource'

@@ -1,0 +1,185 @@
+set nocompatible
+source $VIMRUNTIME/gvimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+
+filetype on
+syntax on
+autocmd FileType * set formatoptions=tcql nocindent comments&
+autocmd FileType c,cpp,h,hpp,cuda set formatoptions=croql 
+	\ cindent 
+	\ comments=sr:/*,mb:*,ex:*/,://
+	\ shiftwidth=4
+	\ expandtab
+    \ tabstop=4
+	\ softtabstop=4
+        \ sections="^{"
+        \ filetype=cpp
+autocmd BufNewFile,BufRead *.cl set filetype=opencl 
+        \ formatoptions=croql 
+	\ cindent 
+	\ comments=sr:/*,mb:*,ex:*/,://
+	\ shiftwidth=4
+	\ expandtab
+	\ softtabstop=4
+        \ sections="^{"
+autocmd BufNewFile,BufRead *.m set filetype=matlab
+        \ formatoptions=croql 
+	\ cindent 
+	\ comments=sr:%{,mb:%,ex:%},:%
+	\ shiftwidth=4
+	\ expandtab
+	\ softtabstop=4
+        \ sections="^{"
+autocmd BufNewFile,BufRead *.py set filetype=python
+        \ formatoptions=croql 
+	\ autoindent 
+	\ comments=sr:/*,mb:*,ex:*/,://
+	\ shiftwidth=2
+	\ expandtab
+	\ softtabstop=2
+        \ sections="^{"
+autocmd BufNewFile,BufRead .sh set filetype=bash
+        \ formatoptions=croql 
+	\ autoindent 
+	\ comments=:#
+	\ shiftwidth=2
+	\ expandtab
+	\ softtabstop=2
+        \ sections="^{"
+autocmd BufNewFile,BufRead *.glsl,*.vs,*.fs,*.gs set filetype=glsl
+        \ formatoptions=croql 
+	\ cindent 
+	\ comments=sr:/*,mb:*,ex:*/,://
+	\ shiftwidth=4
+	\ expandtab
+	\ softtabstop=4
+        \ sections="^{"
+        \ iskeyword=a-z,A-Z,48-57,_,
+autocmd BufNewFile,BufRead *.hlsl set filetype=hlsl
+        \ formatoptions=croql 
+	\ cindent 
+	\ comments=sr:/*,mb:*,ex:*/,://
+	\ shiftwidth=4
+	\ expandtab
+	\ softtabstop=4
+        \ sections="^{"
+autocmd FileType cg set formatoptions=croql 
+	\ cindent 
+	\ comments=sr:/*,mb:*,ex:*/,://
+	\ shiftwidth=4
+	\ expandtab
+	\ softtabstop=4
+        \ sections="^{"
+        \ setf cg
+autocmd FileType tex set formatoptions=croql 
+	\ autoindent 
+	\ comments=:%
+	\ shiftwidth=2
+	\ expandtab
+	\ softtabstop=2
+        \ spell
+        \ spelllang=en_us
+        \ spellsuggest=5
+autocmd BufNewFile,BufRead *.java set filetype=java
+        \ formatoptions=croql 
+	\ cindent 
+	\ comments=sr:/*,mb:*,ex:*/,://
+	\ shiftwidth=4
+	\ expandtab
+	\ softtabstop=4
+        \ sections="^{"
+        \ setf java
+
+
+"abbrievations
+ab #d #define
+ab #i #include
+ab #b /****************************************************************
+ab #e ****************************************************************/
+ab #l // --------------------------------------------------------------
+ab #/ ///////////////////////////////////////////
+source $VIM/abbr.vim
+source $VIM/abbr-eng.vim
+
+"search scheme
+set hlsearch
+set incsearch
+
+"color scheme
+syntax on
+"colorscheme dawn
+"colorscheme oceandeep2
+"colorscheme darkslategray
+"colorscheme desertocean
+"colorscheme inkpot
+colorscheme moria
+"colorscheme rdark
+"colorscheme matrix
+"colorscheme astronaut
+"colorscheme dusk
+
+"asssitances
+set number
+set autowrite
+
+"backup
+set nobackup
+set nowritebackup
+set backupdir=$TMP,$TEMP
+
+"include directory
+set path=,.,C:\Program\ Files\Microsoft\ Visual\ Studio\ 8\VC\include\
+
+" key mapping
+noremap <silent> <F11> :cal VimCommanderToggle()<CR> 
+
+" remove menu and toolbar
+set guioptions-=m  
+set guioptions-=T 
+
+" status line
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [ASCII=%03.3b]\ [HEX=\%02.02B]\ [LINES=%L] 
+set laststatus=2
+
+" highlight the current line
+set cursorline
+highlight CursorLine guifg=red guibg=background
+
+" map arrows to wrapped line navigation
+map <DOWN> gj
+map <UP> gk
+imap <DOWN> <ESC> gki
+imap <UP> <ESC> gji
+
+" sessions
+"autocmd VimEnter * call LoadSession()
+"autocmd VimLeave * call SaveSession()
+
+function! SaveSession()
+    execute 'mksession! session.vim'
+endfunction
+
+function! LoadSession()
+    if argc() == 0
+        execute 'source! session.vim'
+    endif
+endfunction
+
+function! MyFoldFunction()
+    let line = getline(v:foldstart)
+    let sub = substitute(line, '/\*\|\*/\|^\s\+', '', 'g')
+    let line2 = getline(v:foldend)
+    let sub2 = substitute(line2, '^\s\+', '', 'g')
+    let lines = v:foldend - v:foldstart + 1
+    return v:folddashes.sub.'...'.lines.'Lines...,'.sub2
+endfunction
+
+let $PYTHON_HOME='d:\KanziWorkspace_2_5_2\3rdPartySDKs\Python32'
+let $SCONS_HOME='d:\KanziWorkspace_2_5_2\3rdPartySDKs\Python27\Scripts'
+let $JAVA_HOME='c:\Program Files\Java\jdk1.6.0_31\'
+let $ANT_HOME='d:\KanziWorkspace_2_5_2\3rdPartySDKs\apache-ant-1.8.3'
+let $NDK_PATH='d:\KanziWorkspace_2_5_2\3rdPartySDKs\android-ndk-r5c'
+let $ANDROID_SDK='d:\KanziWorkspace_2_5_2\3rdPartySDKs\android-sdk-windows'
+let $KANZI_HOME='d:\KanziWorkspace_2_5_2'
+
+let $PATH=$KANZI_HOME.'\Utils;'.$ANDROID_SDK.'\tools;'.$ANDROID_SDK.'\platform-tools;'.$ANT_HOME.'\bin;'.$JAVA_HOME.'\bin;'.$SCONS_HOME.';'.$PYTHON_HOME.';'.$PATH
