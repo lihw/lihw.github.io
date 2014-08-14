@@ -1,0 +1,312 @@
+/* ------------------------------------------------------------ 
+// Body
+ -------------------------------------------------------------*/ 
+
+p.affliation {
+  font-family: "Verdana", "Lucida Sans Unicode", "Geneva", "Arial", sans-serif;
+  font-size: 15px;
+  color: #000000;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p.email {
+  margin-top: -10px;
+  margin-bottom: 30px;
+  padding-bottom: 0px;
+}
+
+/* ------------------------------------------------------------ 
+ * Paper
+ ------------------------------------------------------------*/ 
+
+ul.paper {
+  list-style-type: none;
+  font: 12px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 2.3ex;
+  text-align: left;
+  color: #555;
+  width: 610px;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul.paper li {
+  height: 150px;
+}
+
+ul.paper img {
+  display: block; 
+  float: left; 
+  margin-left: 0px;
+  margin-right: 20px;
+  width: 160px;
+  height: 120px;
+  border: 1px solid black;
+}
+
+ul.paper p.name {
+  font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin-top:0px;
+  margin-bottom:15px;
+}
+
+ul.paper p.link {
+  font: 12px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin-top:10px;
+  margin-bottom:15px;
+}
+
+ul.paper A {
+  text-decoration: underline; 
+  font-weight: 300;
+  font: 12px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: blue;
+}
+
+ul.paper strong {
+  font-weight: 500;
+} 
+
+/* ------------------------------------------------------------ 
+ * Project
+ ------------------------------------------------------------*/ 
+
+ul.project {
+  list-style-type: none;
+  font: 12px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 2.3ex;
+  text-align: left;
+  color: #555;
+  width: 610px;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul.project li {
+  height: 150px;
+}
+
+ul.project img {
+  display: block; 
+  float: left; 
+  margin-left: 0px;
+  margin-right: 20px;
+  width: 160px;
+  height: 120px;
+  border: 1px solid black;
+}
+
+ul.project p.name {
+  font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin-top:0px;
+  margin-bottom:15px;
+}
+
+ul.project p.link {
+  font-weight: normal;
+  font-size: 12px/1.5;
+  margin-top:10px;
+  margin-bottom:15px;
+}
+
+ul.project A {
+  text-decoration: underline; 
+  font: 12px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: blue;
+}
+
+ul.project strong {
+  font-weight: 500;
+} 
+
+/* ------------------------------------------------------------ 
+ * Demos
+ ------------------------------------------------------------*/ 
+ul.demo {
+  list-style-type: none;
+  font-family:   "Helvetica","Arial","Tahoma", "Geneva", sans-serif;
+  font-size: 15px;
+  line-height: 2.3ex;
+  text-align: left;
+  color: black;
+  width: 720px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+}
+
+ul.demo li {
+  height: 180px;
+}
+
+ul.demo img {
+  display: block; 
+  float: left; 
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+
+ul.demo p.name {
+  font-weight: normal;
+  font-size: 18px;
+  margin-top:0px;
+  margin-bottom:15px;
+}
+
+ul.demo p.link {
+  font-weight: normal;
+  font-size: 15px;
+  margin-top:10px;
+  margin-bottom:15px;
+}
+
+ul.demo A {
+  text-decoration: underline; 
+  font-weight: normal;
+  font-size: 15px;
+  color: blue;
+}
+
+/* ------------------------------------------------------------ 
+ * Other
+ ------------------------------------------------------------*/ 
+
+p.text {
+  font-family: "Verdana", "Lucida Sans Unicode", "Geneva", "Arial", sans-serif;
+  font-size: 14px;
+  color: black;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+.text A:link {
+  text-decoration: underline; 
+  font-weight: normal;
+  color: black;
+}
+.text A:visited {
+  text-decoration: underline; 
+  font-weight: normal;
+  color: black;
+}
+.text A:active {
+  text-decoration: underline; 
+  font-weight: normal;
+  color: black;
+}
+.text A:hover {
+  text-decoration: underline; 
+  font-weight: normal;
+  color: purple;
+}
+
+ul.links {
+  font-family: "Verdana", "Lucida Sans Unicode", "Geneva", "Arial", sans-serif;
+  font-size: 15px;
+  color: black;
+  line-height: 150%;
+  margin-left:0px;
+  margin-right:20px;
+}
+
+ul.links li {
+  margin-top:10px;
+}
+
+ul.links A {
+  text-decoration: none; 
+  font-weight: normal;
+  color: black;
+}
+ul.links A:hover {
+  text-decoration: underline; 
+  font-weight: normal;
+  color: black;
+}
+
+p.music {
+  font-family: "Verdana", "Lucida Sans Unicode", "Geneva", "Arial", sans-serif;
+  font-size: 15px;
+  color: black;
+  font-weight: normal;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+p.other_content {
+  font-family: "Verdana", "Lucida Sans Unicode", "Geneva", "Arial", sans-serif;
+  font-size: 14px;
+  color: black;
+  line-height: 150%;
+}
+
+p.other_content A {
+  color: cyan;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.album {
+  font-family: "Verdana", "Lucida Sans Unicode", "Geneva", "Arial", sans-serif;
+  font-size: 14px;
+  color: black;
+  text-decoration: blink;
+};
+
+.todo {
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 14px; 
+  font-weight: bold; 
+  color:red;
+}
+
+h2.other_content {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif;
+  font-size: 18px; 
+  font-weight bold;
+  color: black;
+}
+
+img.name {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+ul.computer {
+  list-style-type: circle;
+  font-family:   "Helvetica","Arial","Tahoma", "Geneva", sans-serif;
+  font-size: 15px;
+  line-height: 2.3ex;
+  text-align: left;
+  color: black;
+  width: 720px;
+  margin-left: 20px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+}
+
+ul.computer p.name {
+  font-weight: normal;
+  font-size: 18px;
+  margin-top:0px;
+  margin-bottom:15px;
+}
