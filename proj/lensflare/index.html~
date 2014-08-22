@@ -1,0 +1,72 @@
+<html>
+<head><title>Lens flare effect collection</title></head>
+
+<body>
+  <table>
+  <tr>
+    <td><img src="effect01.png" width=200></td> 
+    <td><img src="effect02.png" width=200></td> 
+    <td><img src="effect03.png" width=200></td> 
+    <td><img src="effect04.png" width=200></td> 
+  </tr>
+  <tr>
+    <td>Effect 1 Glow ball</li>
+    <td>Effect 2 Spike ball</li>
+    <td>Effect 3 Star filter</li>
+    <td>Effect 4 Poly spread</li>
+  </tr>
+  <tr>
+    <td><img src="effect05.png" width=200></td> 
+    <td><img src="effect06.png" width=200></td> 
+    <td><img src="effect07.png" width=200></td> 
+    <td><img src="effect08.png" width=200></td> 
+  </tr>
+  <tr>
+    <td>Effect 5 Circle spread</li>
+    <td>Effect 6 Elliptical caustic</li>
+    <td>Effect 7 Star caustic</li>
+    <td>Effect 8 Fade ring</li>
+  </tr>
+  <tr>
+    <td><img src="effect09.png" width=200></td> 
+    <td><img src="effect10.png" width=200></td> 
+    <td><img src="effect11.png" width=200></td> 
+    <td><img src="effect12.png" width=200></td> 
+  </tr>
+  <tr>
+    <td>Effect 9 Stripe</li>
+    <td>Effect 10 Random fan</li>
+    <td>Effect 11 Polyspike ball</li>
+    <td>Effect 12 Photonspike ball</li>
+  </tr>
+  <tr>
+    <td><img src="effect13.png" width=200></td> 
+    <td><img src="effect14.png" width=200></td> 
+    <td><img src="effect15.png" width=200></td> 
+    <td><img src="effect16.png" width=200></td> 
+  </tr>
+  <tr>
+    <td>Effect 13 Unknow</li>
+    <td>Effect 14 Chromhoop</li>
+    <td>Effect 15 Single poly</li>
+    <td>Effect 16 Ellipse</li>
+  </tr>
+  <tr>
+    <td><img src="effect17.png" width=200></td> 
+    <td><img src="effect18.png" width=200></td> 
+    <td><img src="effect19.png" width=200></td> 
+    <td></td> 
+  </tr>
+  <tr>
+    <td>Effect 17 Disc</li>
+    <td>Effect 18 Sparkle</li>
+    <td>Effect 19 Chrome fan</li>
+    <td></li>
+  </tr>
+
+  </table>
+
+  <p>Code will available upon request.</p>
+</body>
+
+</html>
