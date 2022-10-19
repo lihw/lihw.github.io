@@ -1,6 +1,6 @@
 /*
  * Thickbox 2.1 - jQuery plugin for displaying content in a box above the page
- * 
+ *
  * Copyright (c) 2006, 2007 Cody Lindley (http://www.codylindley.com)
  *
  * Licensed under the MIT License:
@@ -17,13 +17,13 @@ function TB_init(){
 		event.preventDefault();
 		// remove click border
 		this.blur();
-	
+
 		// get caption: either title or name attribute
 		var caption = this.title || this.name || "";
-		
+
 		// get rel attribute for image groups
 		var group = this.rel || false;
-		
+
 		// display the box for the elements href
 		TB_show(caption, this.href, group);
 	});
@@ -39,14 +39,14 @@ function TB_show(caption, url, rel) {
 	}
 	// TODO replace or check if event is already assigned
 	$(window).scroll(TB_position);
-	
+
 	// TODO replace
 	TB_overlaySize();
-	
+
 	// TODO create loader only once, hide and show on demand
-	$("body").append("<div id='TB_load'><img src='"+loadingAnim+"/ndxz-studio/site/img/loadingAnimation-whbg.gif' /></div>");
+	$("body").append("<div id='TB_load'><img src='https://lihw.github.io/photography/loadingAnimation-whbg.gif' /></div>");
 	TB_load_position();
-	
+
 	// check if a query string is involved
 	var baseURL = url.match(/(.+)?/)[1] || url;
 
@@ -56,31 +56,31 @@ function TB_show(caption, url, rel) {
 	// check for images
 	if ( baseURL.match(imageURL) ) {
 		var dummy = { caption: "", url: "", html: "" };
-		
+
 		var prev = dummy,
 			next = dummy,
 			imageCount = "";
-			
+
 		// if an image group is given
 		if ( rel ) {
 			function getInfo(image, id, label) {
-				
+
 				return {
 					caption: image.title,
 					url: image.href,
 					html: "<span id='TB_" + id + "'><a href='#'>" + label + "</a></span>"
 				}
 			}
-		
+
 			// find the anchors that point to the group
 			var imageGroup = $("a[rel="+rel+"]").get();
 			var foundSelf = false;
-			
+
 			// loop through the anchors, looking for ourself, saving information about previous and next image
 			for (var i = 0; i < imageGroup.length; i++) {
 				var image = imageGroup[i];
 				var urlTypeTemp = image.href.match(imageURL);
-				
+
 				// look for ourself
 				if ( image.href == url ) {
 					foundSelf = true;
@@ -98,7 +98,7 @@ function TB_show(caption, url, rel) {
 				}
 			}
 		}
-		
+
 		imgPreloader = new Image();
 		imgPreloader.onload = function() {
 			imgPreloader.onload = null;
@@ -110,35 +110,35 @@ function TB_show(caption, url, rel) {
 			var imageWidth = imgPreloader.width;
 			var imageHeight = imgPreloader.height;
 			if (imageWidth > x) {
-				imageHeight = imageHeight * (x / imageWidth); 
-				imageWidth = x; 
-				if (imageHeight > y) { 
-					imageWidth = imageWidth * (y / imageHeight); 
-					imageHeight = y; 
+				imageHeight = imageHeight * (x / imageWidth);
+				imageWidth = x;
+				if (imageHeight > y) {
+					imageWidth = imageWidth * (y / imageHeight);
+					imageHeight = y;
 				}
-			} else if (imageHeight > y) { 
-				imageWidth = imageWidth * (y / imageHeight); 
-				imageHeight = y; 
-				if (imageWidth > x) { 
-					imageHeight = imageHeight * (x / imageWidth); 
+			} else if (imageHeight > y) {
+				imageWidth = imageWidth * (y / imageHeight);
+				imageHeight = y;
+				if (imageWidth > x) {
+					imageHeight = imageHeight * (x / imageWidth);
 					imageWidth = x;
 				}
 			}
 			// End Resizing
-			
+
 			// TODO don't use globals
 			TB_WIDTH = imageWidth + 30;
 			TB_HEIGHT = imageHeight + 60;
-			
+
 			// Vaska addition
 			// need to add span to caption
 			img_caption = (caption == '') ? '&nbsp;' : "<span class='TB_bg'>"+caption+"</span>";
-			
+
 			// TODO empty window content instead
 			$("#TB_window").append("<a href='' id='TB_ImageOff' title='Close'><img id='TB_Image' src='"+url+"' width='"+imageWidth+"' height='"+imageHeight+"' alt='"+caption+"'/></a>" + "<div id='TB_caption'>"+img_caption+"</div><div id='TB_secondLine'>" + prev.html + "<span class='TB_bg'> | " + imageCount + "<span><span class='TB_bg'> | <a href='#' id='TB_closeWindowButton' title='return'>Return</a> | <span>" + next.html + "</div>");
-			
+
 			$("#TB_closeWindowButton").click(TB_remove);
-			
+
 			function buildClickHandler(image) {
 				return function() {
 					$("#TB_window").remove();
@@ -152,11 +152,11 @@ function TB_show(caption, url, rel) {
 			if ( prev.html ) {
 				$("#TB_prev").click(goPrev);
 			}
-			
-			if ( next.html ) {		
+
+			if ( next.html ) {
 				$("#TB_next").click(goNext);
 			}
-			
+
 			// TODO use jQuery, maybe with event fix plugin, or just get the necessary parts of it
 			document.onkeydown = function(e) {
 				if (e == null) { // ie
@@ -182,43 +182,43 @@ function TB_show(caption, url, rel) {
 					break;
 				}
 			}
-			
+
 			// TODO don't remove loader etc., just hide and show later
 			TB_position();
 			$("#TB_load").remove();
 			$("#TB_ImageOff").click(TB_remove);
-			
+
 			// for safari using css instead of show
 			// TODO is that necessary? can't test safari
 			$("#TB_window").css({display:"block"});
 		}
 		imgPreloader.src = url;
-		
+
 	} else { //code to show html pages
-		
+
 		var queryString = url.match(/\?(.+)/)[1];
 		var params = TB_parseQuery( queryString );
-		
+
 		TB_WIDTH = (params['width']*1) + 30;
 		TB_HEIGHT = (params['height']*1) + 40;
 
 		var ajaxContentW = TB_WIDTH - 30,
 			ajaxContentH = TB_HEIGHT - 45;
-		
-		if(url.indexOf('TB_iframe') != -1){				
-			urlNoQuery = url.split('TB_');		
+
+		if(url.indexOf('TB_iframe') != -1){
+			urlNoQuery = url.split('TB_');
 			$("#TB_window").append("<div id='TB_title'><div id='TB_ajaxWindowTitle'>"+caption+"</div><div id='TB_closeAjaxWindow'><a href='#' id='TB_closeWindowButton' title='Close'>close</a></div></div><iframe frameborder='0' hspace='0' src='"+urlNoQuery[0]+"' id='TB_iframeContent' name='TB_iframeContent' style='width:"+(ajaxContentW + 29)+"px;height:"+(ajaxContentH + 17)+"px;' onload='TB_showIframe()'> </iframe>");
 		} else {
 			$("#TB_window").append("<div id='TB_title'><div id='TB_ajaxWindowTitle'>"+caption+"</div><div id='TB_closeAjaxWindow'><a href='#' id='TB_closeWindowButton'>close</a></div></div><div id='TB_ajaxContent' style='width:"+ajaxContentW+"px;height:"+ajaxContentH+"px;'></div>");
 		}
-				
+
 		$("#TB_closeWindowButton").click(TB_remove);
-		
-			if(url.indexOf('TB_inline') != -1){	
+
+			if(url.indexOf('TB_inline') != -1){
 				$("#TB_ajaxContent").html($('#' + params['inlineId']).html());
 				TB_position();
 				$("#TB_load").remove();
-				$("#TB_window").css({display:"block"}); 
+				$("#TB_window").css({display:"block"});
 			}else if(url.indexOf('TB_iframe') != -1){
 				TB_position();
 				if(frames['TB_iframeContent'] == undefined){//be nice to safari
@@ -230,15 +230,15 @@ function TB_show(caption, url, rel) {
 				$("#TB_ajaxContent").load(url, function(){
 					TB_position();
 					$("#TB_load").remove();
-					$("#TB_window").css({display:"block"}); 
+					$("#TB_window").css({display:"block"});
 				});
 			}
-		
+
 	}
-	
+
 	$(window).resize(TB_position);
-	
-	document.onkeyup = function(e){ 	
+
+	document.onkeyup = function(e){
 		if (e == null) { // ie
 			keycode = event.keyCode;
 		} else { // mozilla
@@ -246,9 +246,9 @@ function TB_show(caption, url, rel) {
 		}
 		if(keycode == 27){ // close
 			TB_remove();
-		}	
+		}
 	}
-		
+
 }
 
 //helper functions below
@@ -268,14 +268,14 @@ function TB_remove() {
 }
 
 function TB_position() {
-	var pagesize = TB_getPageSize();	
+	var pagesize = TB_getPageSize();
 	var arrayPageScroll = TB_getPageScrollTop();
 	var style = {width: TB_WIDTH, left: (arrayPageScroll[0] + (pagesize[0] - TB_WIDTH)/2), top: (arrayPageScroll[1] + (pagesize[1]-TB_HEIGHT)/2)};
 	$("#TB_window").css(style);
 }
 
 function TB_overlaySize(){
-	if (window.innerHeight && window.scrollMaxY || window.innerWidth && window.scrollMaxX) {	
+	if (window.innerHeight && window.scrollMaxY || window.innerWidth && window.scrollMaxX) {
 		yScroll = window.innerHeight + window.scrollMaxY;
 		xScroll = window.innerWidth + window.scrollMaxX;
 		var deff = document.documentElement;
@@ -307,7 +307,7 @@ function TB_parseQuery ( query ) {
 	if( !query )
 		return {};
 	var params = {};
-	
+
 	// parse query
 	var pairs = query.split(/[;&]/);
 	for ( var i = 0; i < pairs.length; i++ ) {
@@ -333,7 +333,7 @@ function TB_getPageScrollTop(){
 		yScrolltop = document.body.scrollTop;
 		xScrollleft = document.body.scrollLeft;
 	}
-	arrayPageScroll = new Array(xScrollleft,yScrolltop) 
+	arrayPageScroll = new Array(xScrollleft,yScrolltop)
 	return arrayPageScroll;
 }
 
@@ -341,6 +341,6 @@ function TB_getPageSize(){
 	var de = document.documentElement;
 	var w = window.innerWidth || self.innerWidth || (de&&de.clientWidth) || document.body.clientWidth;
 	var h = window.innerHeight || self.innerHeight || (de&&de.clientHeight) || document.body.clientHeight
-	arrayPageSize = new Array(w,h) 
+	arrayPageSize = new Array(w,h)
 	return arrayPageSize;
 }
