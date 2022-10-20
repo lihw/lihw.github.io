@@ -1,140 +1,125 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0038)https://lihw.github.io/kashgar/part-i/ -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Hongwei Li</title>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
-        <!--<link rel="stylesheet" href="https://lihw.github.io/photography/style.css" type="text/css">-->
-        <link rel="stylesheet" href="../style.css" type="text/css">
-		<!--[if lte IE 6]>
-		<link rel='stylesheet' href='https://lihw.github.io/photography/ie.css' type='text/css' />
-		<![endif]-->
-		<style type="text/css"> @import url(https://lihw.github.io/photography/jquery.thickbox.css); </style>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hongwei Li</title>
+    
+    <!--<link rel="stylesheet" href="https://lihw.github.io/photography/style.css" type="text/css">-->
+    <link rel="stylesheet" href="../style.css" type="text/css">
+     <script type="text/javascript" src="../photos.js"></script>
+    <!--[if lte IE 6]>
+        <link rel='stylesheet' href='https://lihw.github.io/photography/ie.css' type='text/css' />
+    <![endif]-->
+    <style type="text/css"> @import url(https://lihw.github.io/photography/jquery.thickbox.css); </style>
+    
+    <style type="text/css">
+    a.thickbox { border: none; }
+    a.thickbox img { border: 3px solid #fff; margin: 0 6px 9px 0; }
+    </style>
+    
+    <script type="text/javascript" src="https://lihw.github.io/photography/jquery.js"></script>
+    <script type="text/javascript" src="https://lihw.github.io/photography/cookie.js"></script>
+    <script type="text/javascript" src="https://lihw.github.io/photography/thickbox.js"></script>
+    
+    <script type="text/javascript">
+        path = 'https://lihw.github.io/photography/yangzhou';
+    
+        $(document).ready(function() {
+            setTimeout('move_up()', 1);
+                
+            var pages = window.location.href.split('/');
+            console.log(pages[pages.length - 2]);
 
-		<style type="text/css">
-a.thickbox { border: none; }
-a.thickbox img { border: 3px solid #fff; margin: 0 6px 9px 0; }
-</style>
+            // Add projects
+            for (var project of photos.projects) {
+                var item = '<li><a href="https://lihw.github.io/photography/';
+                item += project.name;
+                item += '" onclick="do_click();">';
+                titleWords = project.name.split('-');
+                for (var titleWord of titleWords) {
+                    item += titleWord.charAt(0).toUpperCase() + titleWord.slice(1);
+                    item += ' '; 
+                }
+                item = item.trim();
+                item += '</a></li>';
 
-		<script type="text/javascript" src="https://lihw.github.io/photography/jquery.js"></script>
-		<script type="text/javascript" src="https://lihw.github.io/photography/cookie.js"></script>
-		<script type="text/javascript" src="https://lihw.github.io/photography/thickbox.js"></script>
+                $("#projects").append(item);
+            }
+            
+            // Add travel
+            for (var travel of photos.travels) {
+                var item = '<li><a href="https://lihw.github.io/photography/';
+                item += travel.name;
+                item += '" onclick="do_click();">';
+                titleWords = travel.name.split('-');
+                for (var titleWord of titleWords) {
+                    item += titleWord.charAt(0).toUpperCase() + titleWord.slice(1);
+                    item += ' '; 
+                }
+                item = item.trim();
+                item += '</a></li>';
 
-		<script type="text/javascript">
-		path = 'https://lihw.github.io/photography/yangzhou';
+                $("#travels").append(item);
+            }
 
-		$(document).ready(function()
-		{
-			setTimeout('move_up()', 1);
-		});
-		</script>
-		<script type="text/javascript">
-var loadingAnim = 'https://lihw.github.io/photography/';
-</script>
+            
+            // Add photos
 
-		
-		</head>
+            // Mark the active link
+            $("[href]").each(function() {
+                if (this.href == window.location.href) {
+                    $(this).addClass("active");
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var loadingAnim = 'https://lihw.github.io/photography/';
+    </script>
 
-		<body class="section-4">
-		<div id="menu">
+</head>
 
+<body class="section-4">
+<div id="menu">
 
-		<div class="title">
-		<p><a href="http://lihw.github.io/photography">Hongwei Li</a><br>
-</p>
+<div class="title">
+<p class="name">Hongwei Li<br></p>
 
+<div class="container">
 
-		<div class="container">
-        <ul>
+<ul id="projects">
 <li class="section-title">Projects</li>
-<li><a href="https://lihw.github.io/photography/shanghai-ferries/" onclick="do_click();">Shanghai Ferries</a></li>
-<li><a href="https://lihw.github.io/photography/sprite-of-the-city/" onclick="do_click();">Sprite of The City</a></li>
-<li><a href="https://lihw.github.io/photography/epidemic-epidemic-epidemic/" onclick="do_click();">Epidemic Epidemic Epidemic</a></li>
-<li><a href="https://lihw.github.io/photography/home/" onclick="do_click();">Home</a></li>
 </ul>
 
-<ul>
+<ul id="travels">
 <li class="section-title">Travel</li>
-<li class="active"><a href="https://lihw.github.io/photograph/yangzhou/" onclick="do_click();">Yang Zhou</a></li>
-<!--<li><a href="https://lihw.github.io/kashgar/part-ii--areya/" onclick="do_click();">·Part II  A'REYA</a></li>-->
 </ul>
-<!--
-<ul>
-<li><a href="https://lihw.github.io/all-that-is/all-that-is/" onclick="do_click();">All that is</a></li>
-</ul>
-
-<ul>
-<li><a href="https://lihw.github.io/bio/bio/" onclick="do_click();">Bio</a></li>
-<li><a href="https://lihw.github.io/bio/exhibitions-/" onclick="do_click();">Installation views</a></li>
-<li><a href="https://lihw.github.io/bio/book/" onclick="do_click();">Book</a></li>
-</ul>
--->
-
 
 <!--<p><a href="http://erisyo.com/contact/contact/">Contact</a></p>-->
+<!-- you must provide a link to Indexhibit on your site someplace - thank you -->
+
+</div> <!-- container -->
+</div> <!-- title -->
+</div> <!-- menu -->
+
+<div id="content">
+<div class="container2">
+
+<!-- text and image -->
 		
-		<!-- you must provide a link to Indexhibit on your site someplace - thank you -->
+<!-- text -->
+<div class="cl"><p>The family trip to Yang Zhou in 2022/8/12-2022/8/16</p></div>
 
-        </div>
-		</div>	
-		</div>	
-
-		<div id="content">
-		<div class="container2">
-
-		<!-- text and image -->
-		
-<div class="cl"><!-- --></div>
+<!--photos-->
 <div id="img-container">
-
-    <div>
-<a href="https://lihw.github.io/photography/yangzhou/large/1.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/1.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/2.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/2.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/3.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/3.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/4.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/4.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/5.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/5.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/6.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/6.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/7.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/7.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/8.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/8.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/9.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/9.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/10.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/10.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/11.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/11.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/12.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/12.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/13.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/13.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/14.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/14.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/15.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/15.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/16.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/16.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/17.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/17.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/18.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/18.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/19.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/19.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/20.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/20.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/21.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/21.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/22.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/22.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/23.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/23.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/24.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/24.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/25.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/25.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/26.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/26.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/27.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/27.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/28.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/28.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/29.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/29.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/30.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/30.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/31.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/31.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/32.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/32.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/33.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/33.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/34.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/34.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/35.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/35.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/36.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/36.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/37.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/37.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/38.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/38.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/39.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/39.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/40.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/40.jpg" alt="" height="156"></a>
-<a href="https://lihw.github.io/photography/yangzhou/large/41.jpg" title="" class="thickbox" rel="gallery-plants"><img src="https://lihw.github.io/photography/yangzhou/41.jpg" alt="" height="156"></a>
-
+<div id="photos">
+</div>
 </div>
 
-		<!-- end text and image -->
+<!-- end text and image -->
 
-		</div>
-		</div>
+</div>
 		
 		
-		</body></html>
+</body></html>

@@ -21,8 +21,10 @@ body.section-1 { }
 body.section-2 { }
 body.section-3 { }
 
+a:active { text-decoration: underline; color: #333333; }
+
 .container ul li a:link { text-decoration: none; color: #333333; }
-.container ul li a:active { text-decoration: none; color: #333333; }
+.container ul li a:active { text-decoration: underline; color: #333333; }
 .container ul li a:visited { text-decoration: none; color: #333333; }
 .container ul li a:hover { text-decoration: none; color: #FFF; background-color: #CCCC00; font-style: normal; }
 
@@ -30,6 +32,15 @@ body.section-3 { }
 .title a:active { text-decoration: none; color: #333333; }
 .title a:visited { text-decoration: none; color: #333333; }
 .title a:hover { text-decoration: none; color: #FFF; background-color: #CCCC00; font-style: normal; }
+
+/*
+#menu p.name { 
+    padding-left: 0px;
+    list-style-type: none;
+    font-size: 14px;
+    font-style: bold;
+}
+*/
 
 a.yolink:link { text-decoration: none; color: #333333; }
 a.yolink:active { text-decoration: none; color: #333333; }
@@ -60,6 +71,8 @@ a img { border: none; }
 #menu ul li.section-title {
     padding-left: 0px;
     list-style-type: none;
+    font-size: 14px;
+    font-style: bold;
  }
 
 #menu ul li.active {
@@ -97,9 +110,9 @@ a.thumb-img:hover {color:#333333; background-color: #ffffff;}
 }
 .title {
     padding: 20px 5px 0px 5px;
-    font-size: 11px;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
+    font-size: 14px;
+    font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+    font-style: bold;
     color: #333333;
 }
 
@@ -107,6 +120,12 @@ a.thumb-img:hover {color:#333333; background-color: #ffffff;}
 
 p {
     margin: 0 0 9px 0;
+    font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+    color: #333333;
+}
+
+#cl p {
+    text-align: center;
 }
 
 h1 { font-size: 32px; }
