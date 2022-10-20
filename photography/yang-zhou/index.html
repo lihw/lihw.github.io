@@ -20,7 +20,6 @@
     
     <script type="text/javascript" src="https://lihw.github.io/photography/jquery.js"></script>
     <script type="text/javascript" src="https://lihw.github.io/photography/cookie.js"></script>
-    <script type="text/javascript" src="https://lihw.github.io/photography/thickbox.js"></script>
     
     <script type="text/javascript">
         path = 'https://lihw.github.io/photography/yangzhou';
@@ -36,7 +35,7 @@
             // Add projects
             for (var project of photos.projects) {
                 var item = '<li><a href="https://lihw.github.io/photography/';
-                item += project.name;
+                item += project.name + '/index.html';
                 item += '" onclick="do_click();">';
                 titleWords = project.name.split('-');
                 for (var titleWord of titleWords) {
@@ -56,7 +55,7 @@
             // Add travel
             for (var travel of photos.travels) {
                 var item = '<li><a href="https://lihw.github.io/photography/';
-                item += travel.name;
+                item += travel.name + '/index.html';
                 item += '" onclick="do_click();">';
                 titleWords = travel.name.split('-');
                 for (var titleWord of titleWords) {
@@ -74,12 +73,9 @@
             }
 
             // Add photos
-            console.log(thesePhotos);
             for (var i = 1; i <= thesePhotos; i++) {
                 var item = '<a href="https://lihw.github.io/photography/' + thisProject + '/large/' + i + '.jpg" title="" class="thickbox" rel="gallery-plants">';
                 item +=    '<img src="https://lihw.github.io/photography/' + thisProject + '/' + i + '.jpg" class="thumbnail" alt=""></a>';
-                
-                console.log(item);
                 $("#photos").append(item);
             }
 
@@ -91,6 +87,9 @@
             });
         });
     </script>
+
+    <!--<script type="text/javascript" src="https://lihw.github.io/photography/thickbox.js"></script>-->
+    <script type="text/javascript" src="../thickbox.js"></script>
     <script type="text/javascript">
         var loadingAnim = 'https://lihw.github.io/photography/';
     </script>
