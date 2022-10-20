@@ -29,7 +29,9 @@
             setTimeout('move_up()', 1);
                 
             var pages = window.location.href.split('/');
-            console.log(pages[pages.length - 2]);
+            var thisProject = pages[pages.length - 2];
+            var thesePhotos = 0;
+            console.log("Opening " + thisProject);
 
             // Add projects
             for (var project of photos.projects) {
@@ -43,6 +45,10 @@
                 }
                 item = item.trim();
                 item += '</a></li>';
+
+                if (project.name == thisProject) {
+                    thesePhotos = project.photos;
+                }
 
                 $("#projects").append(item);
             }
@@ -59,12 +65,23 @@
                 }
                 item = item.trim();
                 item += '</a></li>';
+                
+                if (travel.name == thisProject) {
+                    thesePhotos = travel.photos;
+                }
 
                 $("#travels").append(item);
             }
 
-            
             // Add photos
+            console.log(thesePhotos);
+            for (var i = 1; i <= thesePhotos; i++) {
+                var item = '<a href="https://lihw.github.io/photography/' + thisProject + '/large/' + i + '.jpg" title="" class="thickbox" rel="gallery-plants">';
+                item +=    '<img src="https://lihw.github.io/photography/' + thisProject + '/' + i + '.jpg" class="thumbnail" alt=""></a>';
+                
+                console.log(item);
+                $("#photos").append(item);
+            }
 
             // Mark the active link
             $("[href]").each(function() {
