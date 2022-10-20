@@ -145,11 +145,17 @@ h4 { font-size: 12px; }
     width: 800px;
 }
 
+div#photos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #img-container p	{ margin: 0; padding: 0 0 12px 0; }
 #img-container img	{ 
   float: left;
   width: 200px;
   height: 200px;
+  object-fit:cover;
 }
 
 #once { clear: left; }
