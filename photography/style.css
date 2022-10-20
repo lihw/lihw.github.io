@@ -83,12 +83,12 @@ a img { border: none; }
 
 #content {
     height: 100%;
-    margin: 0 0 0 280px;
+    margin: 0 0 0 100px;
     top: 0;
 }
 
 .container {
-    padding: 10px 50px 25px 0px;
+    padding: 10px 50px 0px 0px;
     font-size: 11px;
     font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
     font-style: normal;
@@ -96,7 +96,7 @@ a img { border: none; }
 }
 
 .container2 {
-    padding: 30px 50px 25px 5px;
+    /*padding: 30px 0px 0px 0px;*/
     font-size: 12px;
     background-color: #ffffff;
     font-family: arial;
@@ -124,8 +124,11 @@ p {
     color: #333333;
 }
 
-#cl p {
-    text-align: center;
+.cl p {
+    padding-left: 200px;
+    padding-top: 50px;
+    text-align: justify;
+    width: 640px;
 }
 
 h1 { font-size: 32px; }
@@ -135,12 +138,18 @@ h4 { font-size: 12px; }
 
 
 
-#img-container	{ margin: 0; padding-left: 100px; padding-top: 20px; display: flex; flex-wrap: wrap; }
+#img-container	{ 
+    margin: 0; 
+    padding-left: 200px; 
+    padding-top: 20px; 
+    width: 800px;
+}
+
 #img-container p	{ margin: 0; padding: 0 0 12px 0; }
 #img-container img	{ 
-  object-fit: cover;
-  width: 230px;
-  height: 230px;
+  float: left;
+  width: 200px;
+  height: 200px;
 }
 
 #once { clear: left; }
