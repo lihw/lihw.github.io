@@ -9,6 +9,7 @@ var photos = {
         {"name": "城市精灵", "photos": 72},
         {"name": "here-and-there", "photos": 72},
         {"name": "son", "photos": 72}
+        {"name": "wonderful-world", "photos": 71}
     ],
     "travels": [
         {"name": "japan", "photos": 41},
