@@ -1,7 +1,7 @@
 
 var photos = {
     "projects": [
-        {"name": "shanghai-ferries", "photos": 72},
+        {"name": "shanghai-ferries", "photos": 78},
         {"name": "2020-pan", "photos": 72},
         {"name": "metro", "photos": 72},
         {"name": "epidemic-epidemic-epidemic", "photos": 72},
